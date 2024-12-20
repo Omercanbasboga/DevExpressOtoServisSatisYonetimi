@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="OtoServisSablon.master.cs" Inherits="OtoServisSatis.WebFormUI.OtoServisSablon" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        #menu { margin-right: 3em; border: 1px solid #ddd; padding: 0; }
+            #menu li { list-style: none; line-height: 30px; border-bottom: 1px solid #ddd; padding: 0 1rem; }
+                #menu li:last-child { border-bottom: none; }
+                #menu li:hover { background-color: gainsboro; }
+                #menu li a { text-decoration: none; color: dimgray; }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+       <ul id="menu">
+    <li>
+        <a href="/AnaMenu.aspx">Ana Menu</a>
+    </li>
+    <li>
+        <a href="/AracYonetimi.aspx">Araç Yönetimi</a>
+    </li>
+    <li>
+        <a href="/KullaniciYonetimi.aspx">Kullanıcı Yönetimi</a>
+    </li>
+    <li>
+        <a href="/MarkaYonetimi.aspx">Marka Yönetimi</a>
+    </li>
+    <li>
+        <a href="/MusteriYonetimi.aspx">Müşteri Yönetimi</a>
+    </li>
+    <li>
+        <a href="/RolYonetimi.aspx">Rol Yönetimi</a>
+    </li>
+    <li>
+        <a href="/SatisYonetimi.aspx">Satış Yönetimi</a>
+    </li>
+    <li>
+        <a href="/ServisYonetimi.aspx">Servis Yönetimi</a>
+    </li>
+    
+</ul>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+    </form>
+</body>
+</html>

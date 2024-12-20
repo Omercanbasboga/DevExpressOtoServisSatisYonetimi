@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Oto Servis Satış Yönetimi</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Modern Renk Paleti */
+        :root {
+            --primary-color: #1a73e8; /* Canlı mavi */
+            --secondary-color: #f44336; /* Modern kırmızı */
+            --background-color: #f4f6f9; /* Açık gri */
+            --dark-color: #212529; /* Koyu gri */
+            --text-light: #f9f9f9; /* Beyaz metin */
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: var(--primary-color);
+        }
+
+            header a.nav-link {
+                color: var(--text-light) !important;
+                font-weight: 500;
+            }
+
+                header a.nav-link:hover {
+                    color: var(--secondary-color) !important;
+                }
+
+            header .btn-danger {
+                background-color: var(--secondary-color);
+                border: none;
+            }
+
+                header .btn-danger:hover {
+                    background-color: #d32f2f;
+                }
+
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+        }
+
+            footer a {
+                color: var(--text-light);
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    color: var(--primary-color);
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="p-3">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/Admin/" class="nav-link px-2">Giriş</a></li>
+                    <li><a href="/Admin/AracYonetimi" class="nav-link px-2">Araç Yönetimi</a></li>
+                    <li><a href="/Admin/KullaniciYonetimi" class="nav-link px-2">Kullanıcı Yönetimi</a></li>
+                    <li><a href="/Admin/MarkaYonetimi" class="nav-link px-2">Marka Yönetimi</a></li>
+                    <li><a href="/Admin/MusteriYonetimi" class="nav-link px-2">Müşteri Yönetimi</a></li>
+                    <li><a href="/Admin/Roller" class="nav-link px-2">Rol Yönetimi</a></li>
+                    <li><a href="/Admin/SatisYonetimi" class="nav-link px-2">Satış Yönetimi</a></li>
+                    <li><a href="/Admin/Servis" class="nav-link px-2">Servis Yönetimi</a></li>
+                </ul>
+
+                @if (Session["admin"] != null)
+                {
+                    <div class="text-end">
+                        <a href="/Admin/Login/Logout" class="btn btn-danger">Çıkış</a>
+                    </div>
+                }
+                else
+                {
+                    Response.Redirect("/Admin/Login");
+                }
+            </div>
+        </div>
+    </header>
+
+    <!-- Ana İçerik -->
+    <div class="container my-5">
+        @RenderBody()
+    </div>
+
+    <!-- Modern Footer -->
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; @DateTime.Now.Year - Oto Servis Satış Yönetimi</p>
+            <p class="small">Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
